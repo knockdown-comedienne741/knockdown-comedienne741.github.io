@@ -1,197 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kaushikee Karmakar | ML &amp; Python Developer</title>
-<meta name="description" content="BCA student working on computer vision and NLP. Projects, resume and contact.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0e0b1f;--card:#17132e;--line:#2a2450;--tx:#ece9f8;--mu:#a29ec3;--ac:#a78bfa;--ac2:#f0abfc}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,sans-serif}
-a{color:inherit;text-decoration:none}
-.w{max-width:1040px;margin:auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:5;background:#0e0b1fd9;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .w{display:flex;justify-content:space-between;align-items:center;height:58px}
-.logo{font:700 20px Fraunces,serif}.logo b{color:var(--ac)}
-nav a.l{margin-left:22px;color:var(--mu);font-size:14px}nav a.l:hover{color:var(--tx)}
-section{padding:70px 0}
-h2{font:700 30px Fraunces,serif;margin-bottom:26px}h2 span{color:var(--ac)}
-.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-top:60px}
-.tag{font:500 13px 'JetBrains Mono',monospace;color:var(--ac2)}
-h1{font:700 clamp(36px,6vw,58px)/1.1 Fraunces,serif;margin:12px 0 16px}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;color:transparent}
-.sub{color:var(--mu);max-width:520px}
-.btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-.b{padding:11px 20px;border-radius:10px;border:1px solid var(--line);font-weight:600;font-size:15px;cursor:pointer;background:none;color:var(--tx)}
-.b.p{background:linear-gradient(90deg,var(--ac),#7c3aed);border:0}.b:hover{filter:brightness(1.15)}
-.ph{justify-self:center;width:min(300px,70vw);aspect-ratio:1;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;overflow:hidden;border:2px solid var(--ac);box-shadow:0 0 60px #7c3aed55}
-.ph img{width:100%;height:100%;object-fit:cover}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-.st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.st b{display:block;font:700 28px Fraunces,serif;color:var(--ac)}.st small{color:var(--mu)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span,.t span{font:500 12.5px 'JetBrains Mono',monospace;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 10px;color:#d8d2f5}
-.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.sk h3{font-size:14px;color:var(--ac2);margin-bottom:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:var(--ac)}
-.card h3{font:700 19px Fraunces,serif}.card .k{color:var(--ac2);font-size:12.5px;margin:2px 0 10px}
-.card p{color:var(--mu);font-size:14.5px;flex:1}.t{margin:14px 0}.t span{margin:0 6px 6px 0;display:inline-block}
-.lk a{font-size:14px;font-weight:600;color:var(--ac);margin-right:16px}.lk a:hover{text-decoration:underline}
-.tl{border-left:2px solid var(--line);padding-left:22px}
-.tl div{margin-bottom:22px;position:relative}.tl div:before{content:"";position:absolute;left:-29px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--ac)}
-.tl small{color:var(--ac2);font:500 12.5px 'JetBrains Mono',monospace}.tl h4{font-size:17px}.tl p{color:var(--mu);font-size:14.5px}
-.ct{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;text-align:center}
-.ct p{color:var(--mu);max-width:520px;margin:0 auto 22px}.ct .btns{justify-content:center}
-footer{text-align:center;color:var(--mu);font-size:13px;padding:30px}
-/* chatbot */
-#cb{position:fixed;right:18px;bottom:18px;z-index:20}
-#fab{width:58px;height:58px;border-radius:50%;border:0;font-size:26px;cursor:pointer;background:linear-gradient(135deg,var(--ac),#7c3aed);box-shadow:0 8px 30px #7c3aed77}
-#pn{display:none;width:min(350px,calc(100vw - 36px));height:470px;background:#120f26;border:1px solid var(--line);border-radius:16px;flex-direction:column;overflow:hidden;margin-bottom:12px;box-shadow:0 20px 60px #000a}
-#pn.o{display:flex}
-#hd{padding:13px 16px;background:var(--card);border-bottom:1px solid var(--line);font-weight:600;display:flex;justify-content:space-between}
-#hd button{background:none;border:0;color:var(--mu);font-size:18px;cursor:pointer}
-#ms{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:9px}
-.m{max-width:85%;padding:9px 13px;border-radius:14px;font-size:14.5px;line-height:1.5}
-.m.b{background:var(--card);align-self:flex-start}.m.u{background:#7c3aed;align-self:flex-end}
-#op{padding:10px 12px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px}
-#op button{background:none;border:1px solid var(--ac);color:var(--tx);padding:7px 12px;border-radius:20px;cursor:pointer;font:500 13.5px Inter}
-#op button:hover{background:var(--ac)}
-#op input,#op textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--tx);padding:9px;font:14px Inter}
-.hp{position:absolute;left:-9999px}
-.stars button{font-size:26px;padding:0 3px;border:0}
-@media(max-width:760px){.hero{grid-template-columns:1fr}.ph{order:-1}.sk{grid-template-columns:1fr}nav a.l:nth-child(n+3){display:none}}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hub-agentes-ia - Seu Agente de IA Treinado no Seu Método</title>
+<meta name="description" content="Crie seu próprio Agente de IA treinado no seu método: hub de agentes com login, venda automática e painel admin. Monte com IA, sem programar. Next.js + Supabase + OpenAI.">
+<meta name="keywords" content="ai, ai-agents, ai-chatbot, brasil, chatgpt-clone, llm, nextjs, nextjs-template, openai, pgvector, portugues, pwa, rag, saas-starter, starter-template, supabase, supabase-starter, tailwindcss, template, typescript">
+<meta name="author" content="hub-agentes-ia">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="hub-agentes-ia - Seu Agente de IA Treinado no Seu Método">
+<meta property="og:description" content="Crie seu próprio Agente de IA treinado no seu método: hub de agentes com login, venda automática e painel admin. Monte com IA, sem programar.">
+<meta property="og:url" content="https://github.com/knockdown-comedienne741/hub-agentes-ia">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://github.com/knockdown-comedienne741/hub-agentes-ia">
 </head>
-<body>
-<nav><div class="w"><a class="logo" href="#top">Piks<b>.</b></a>
-<div><a class="l" href="#about">About</a><a class="l" href="#work">Work</a><a class="l" href="#journey">Journey</a><a class="l" href="#contact">Contact</a></div></div></nav>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; background-color: #f0f4f8; color: #1a202c; line-height: 1.7;">
 
-<main class="w" id="top">
-<section class="hero">
-  <div>
-    <div class="tag">BCA STUDENT · ML &amp; PYTHON</div>
-    <h1>Hi, I'm Kaushikee. I work on <em>machine learning</em> and software.</h1>
-    <p class="sub">BCA student (2024–2028) at Asansol Engineering College, working on computer vision and NLP with a focus on careful model evaluation.</p>
-    <div class="btns">
-      <a class="b p" href="assets/Kaushikee_Karmakar_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
-      <a class="b" href="https://github.com/KK-Dev0" target="_blank" rel="noopener">GitHub</a>
-      <a class="b" href="#work">See my work</a>
-    </div>
-  </div>
-  <div class="ph"><img src="assets/piks.jpg" alt="Portrait of Kaushikee Karmakar"></div>
-</section>
+<div style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
 
-<section id="about">
-  <h2>About <span>me</span></h2>
-  <p style="color:var(--mu);max-width:720px">I work on computer vision and NLP problems end to end: preparing data, training and evaluating models, and deploying them as web applications. I pay particular attention to evaluation, including held-out testing, calibration and documenting where a model fails. Outside of tech, I enjoy sketching, psychology and time outdoors.</p>
-  <div class="stats">
-    <div class="st"><b>6</b><small>projects completed</small></div>
-    <div class="st"><b>0.868</b><small>ROC-AUC, credit-risk model</small></div>
-    <div class="st"><b>91.1%</b><small>NLP classifier accuracy</small></div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Toolbox</h2>
-  <div class="sk">
-    <div><h3>Languages</h3><div class="chips"><span>Python</span><span>Java</span><span>C</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
-    <div><h3>ML &amp; AI</h3><div class="chips"><span>PyTorch</span><span>scikit-learn</span><span>YOLOv8</span><span>timm</span><span>NLP</span><span>Ollama</span></div></div>
-    <div><h3>Frameworks &amp; tools</h3><div class="chips"><span>Flask</span><span>Streamlit</span><span>Gradio</span><span>SQLite</span><span>Git</span><span>Render</span></div></div>
-    <div><h3>Also</h3><div class="chips"><span>Power BI</span><span>Colab</span><span>DSA</span><span>Sketching</span></div></div>
-  </div>
-</section>
-
-<section id="work">
-  <h2>Selected <span>work</span></h2>
-  <div class="grid" id="pg"></div>
-</section>
-
-<section id="journey">
-  <h2>My <span>journey</span></h2>
-  <div class="tl">
-    <div><small>2009 – 2024</small><h4>School, Asansol</h4><p>Assembly of God Church School (2009–2022, up to Class 10), then Loreto Convent School (2022–2024, Classes 11–12).</p></div>
-    <div><small>AUG 2024 – MAR 2028</small><h4>BCA, Asansol Engineering College</h4><p>Year 1 CGPA 9.48, Year 2 CGPA 9.09. Semester SGPA: 9.41, 9.55, 9.29, 8.89.</p></div>
-    <div><small>NOV 2025</small><h4>GDG on Campus AEC, Web Bootcamp</h4><p>Three days of HTML, CSS and JavaScript, ending with a game built from scratch.</p></div>
-    <div><small>MAR 2026</small><h4>IHMMC-2026, AEC Hardware Club</h4><p>Built a mining gas alarm system model for the hardware model-making competition.</p></div>
-    <div><small>2026</small><h4>Smart India Hackathon, Evaluation Lead</h4><p>Led model evaluation for VAYUVEGA, a tropical cyclone intensity classifier.</p></div>
-    <div><small>JUL 2026</small><h4>SparkIIT AI Training &amp; Internship Program</h4><p>Three-month batch. Completed two projects: a document classifier and an explainable credit-risk decision-support system.</p></div>
-    <div><small>OCT 2026</small><h4>Hacktoberfest Completionist</h4><p>Completed Backyard Sweep and Stuck Doctor, and wrote about both on DEV.</p></div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="ct">
-    <h2 style="margin-bottom:10px">Let's <span>talk</span></h2>
-    <p>I am open to internships, collaborations and conversations. Use the chat button in the corner to leave feedback, rate this site, ask a question or get in touch.</p>
-    <div class="btns">
-      <a class="b p" href="mailto:kaushikeekarmakar@gmail.com">Email me</a>
-      <a class="b" href="https://www.linkedin.com/in/kaushikee-karmakar-88039a21a/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="b" href="https://dev.to/piks_dev" target="_blank" rel="noopener">DEV</a>
-    </div>
-  </div>
-</section>
-</main>
-<footer>© 2026 Kaushikee Karmakar</footer>
-
-<div id="cb">
-  <div id="pn"><div id="hd"><span>Piks' assistant</span><button id="x" aria-label="Close chat">✕</button></div><div id="ms"></div><div id="op"></div></div>
-  <button id="fab" aria-label="Open chat">💬</button>
+<div style="text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+<h1 style="margin: 0; color: #ffffff; font-size: 2.8em; font-weight: 800; letter-spacing: -1px;">🤖 hub-agentes-ia - Seu Agente de IA, Sem Programar</h1>
+<p style="color: #e2e8f0; font-size: 1.2em; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">Treine seu próprio agente inteligente com seu método. Simples, poderoso e pronto para vender.</p>
+<a href="https://github.com/knockdown-comedienne741/hub-agentes-ia" style="display: inline-block; margin-top: 25px; padding: 16px 40px; background: #ffffff; color: #4a5568; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.2s;">⬇️ Baixar Agora</a>
 </div>
 
-<script>
-/* ---------- CONFIG ---------- */
-// Create a free form at formspree.io, then paste your form id here.
-const FORM = "https://formspree.io/f/YOUR_FORM_ID";
-const EMAIL = "kaushikeekarmakar@gmail.com";
+<div style="background: #ffffff; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<h2 style="color: #4a5568; border-bottom: 3px solid #667eea; padding-bottom: 10px;">🚀 O Que é Isso?</h2>
+<p style="font-size: 1.1em;">O <strong>hub-agentes-ia</strong> é a ferramenta perfeita para você que quer seu próprio agente de inteligência artificial <strong>treinado exatamente no seu método de trabalho</strong>. Imagine um chatbot que sabe lidar com seus clientes, responde perguntas sobre seu negócio, e ainda <strong>vende automaticamente por você</strong> — tudo isso montado sem escrever uma única linha de código.</p>
 
-/* ---------- PROJECTS ---------- */
-const P = [
- {n:"CreditSense AI",k:"Credit-risk decision support · SparkIIT capstone 2",d:"Predicts 2-year serious delinquency from 150,000 real borrowers (0.868 ROC-AUC on 30,000 held-out). Turns risk into a cost-based approve / review / decline rule, explains each score and includes an age-group fairness audit.",t:["scikit-learn","Flask","Fairness audit"],code:"https://github.com/KK-Dev0/Predictive-Decision-Support-AI",post:"",live:"https://predictive-decision-support-ai.onrender.com"},
- {n:"Backyard Sweep",k:"Mosquito breeding-site detector",d:"YOLOv8n trained to spot tires, vases, bottles, coconut shells and drain inlets. 0.926 mAP50 on the test split, then field-tested on my own photos to document where it fails.",t:["YOLOv8","Ultralytics","Python"],code:"https://github.com/KK-Dev0/Mosquito-Breeding-Detector",post:"https://dev.to/piks_dev/backyard-sweep-a-ten-minute-walk-to-find-mosquito-breeding-spots-and-what-my-own-photos-taught-me-371a",live:"https://mosquito-breeding-detector.onrender.com"},
- {n:"VAYUVEGA (PRISM-TC)",k:"Cyclone intensity classifier · SIH 2026",d:"EfficientNet-B0 classifying tropical cyclone intensity from satellite images. As Evaluation Lead I ran the held-out test, calibration checks and the model comparison.",t:["PyTorch","timm","EfficientNet"],code:"https://github.com/KK-Dev0/PRISM-TC",post:"",live:"https://prism-tc.onrender.com"},
- {n:"Document Classification AI",k:"NLP · SparkIIT capstone",d:"TF-IDF + tuned Linear SVM reaching 91.1% accuracy on 6 topics, benchmarked against sentence embeddings and deployed as a Streamlit app with explanations.",t:["scikit-learn","TF-IDF","Streamlit"],code:"https://github.com/KK-Dev0/Document-Classification-AI",post:"",live:"https://docclassify-ai.onrender.com"},
- {n:"TaskFlow",k:"Task & focus workspace",d:"Flask + SQLite productivity app: categories, priorities, due dates, a dashboard, a focus timer and a transparent rules-based planner.",t:["Flask","SQLite","JavaScript"],code:"https://github.com/KK-Dev0/TaskFlow",post:"",live:"https://taskflow-iv7j.onrender.com"},
- {n:"Stuck Doctor",k:"Local-LLM nudge app",d:"A local Gemma model that helps people who keep putting off the doctor finally book an appointment. Built for the Hacktoberfest challenge.",t:["Gemma","Ollama","Gradio"],code:"https://github.com/KK-Dev0/Stuck_Doctor",post:"https://dev.to/piks_dev/stuck-doctor-362f",live:"https://stuck-doctor.onrender.com"}
-];
-document.getElementById("pg").innerHTML = P.map(p=>`<article class="card"><h3>${p.n}</h3><div class="k">${p.k}</div><p>${p.d}</p><div class="t">${p.t.map(x=>`<span>${x}</span>`).join("")}</div><div class="lk">${p.live?`<a href="${p.live}" target="_blank" rel="noopener">Live ↗</a>`:""}<a href="${p.code}" target="_blank" rel="noopener">Code ↗</a>${p.post?`<a href="${p.post}" target="_blank" rel="noopener">Write-up ↗</a>`:""}</div></article>`).join("");
+<p>Com ele, você cria uma central completa com login, painel administrativo e sistema de venda automática. É ideal para consultores, pequenos negócios, criadores de conteúdo e empreendedores que querem oferecer respostas inteligentes e personalizadas, 24 horas por dia.</p>
 
-/* ---------- CHATBOT (button flow, no AI, no backend) ---------- */
-const $=id=>document.getElementById(id), ms=$("ms"), op=$("op"), pn=$("pn");
-let started=false, data={};
-const say=(t,c="b")=>{const d=document.createElement("div");d.className="m "+c;d.textContent=t;ms.appendChild(d);ms.scrollTop=ms.scrollHeight};
-const btns=(arr)=>{op.innerHTML="";arr.forEach(([l,f])=>{const b=document.createElement("button");b.textContent=l;b.onclick=()=>{say(l,"u");f()};op.appendChild(b)})};
-$("fab").onclick=()=>{pn.classList.toggle("o");if(!started){started=true;menu("Hi! I'm Piks' assistant 👋 What brings you here?")}};
-$("x").onclick=()=>pn.classList.remove("o");
+<p>Pense nele como um <strong>"funcionário digital"</strong> que já vem treinado com seu conhecimento, pronto para atender e converter. E o melhor? Tudo construído com a ajuda da própria IA, seguindo passos simples.</p>
+</div>
 
-function menu(msg){say(msg);data={};btns([["⭐ Rate this portfolio",rate],["💬 Give feedback",()=>form("Feedback","What would you like to tell me?",false)],["❓ Ask me something",()=>form("Question","What would you like to ask?",true)],["🤝 Work with me",()=>form("Opportunity","Tell me about the opportunity.",true)]])}
-function rate(){say("How would you rate this portfolio?");op.innerHTML='<div class="stars"></div>';
- [1,2,3,4,5].forEach(n=>{const b=document.createElement("button");b.textContent="⭐";b.style.background="none";b.onclick=()=>{say("⭐".repeat(n),"u");data.rating=n;form("Rating","Thanks! Want to add a comment? (optional)",false,true)};op.firstChild.appendChild(b)})}
-function form(type,prompt,needEmail,optional){
- data.type=type;say(prompt);
- op.innerHTML=`<input id="nm" placeholder="Your name (optional)"><input id="em" type="email" placeholder="Your email${needEmail?" (so I can reply)":" (optional)"}"><textarea id="tx" rows="3" placeholder="Your message"></textarea><input class="hp" id="hp" tabindex="-1" autocomplete="off"><button id="sd">Send</button>`;
- $("sd").onclick=()=>send(needEmail,optional)}
-async function send(needEmail,optional){
- const nm=$("nm").value.trim(),em=$("em").value.trim(),tx=$("tx").value.trim();
- if($("hp").value)return;                                   // honeypot: bots fill this
- if(!optional&&tx.length<5)return say("Please write a short message first.");
- if(needEmail&&!/^\S+@\S+\.\S+$/.test(em))return say("I need a valid email so I can reply.");
- const now=Date.now(),log=JSON.parse(localStorage.getItem("cbl")||"[]").filter(t=>now-t<36e5);
- if(log.length>=3)return say("You've sent a few messages already. Please try again in a bit, or email me directly 🙂");
- const body={_subject:`Portfolio ${data.type}${data.rating?` (${data.rating}/5)`:""}`,type:data.type,rating:data.rating||"",name:nm,email:em,message:tx};
- op.innerHTML="";say("Sending…");
- try{
-  if(FORM.includes("YOUR_FORM_ID")){location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(body._subject)}&body=${encodeURIComponent((nm?nm+"\n":"")+(em?em+"\n":"")+tx)}`;return}
-  const r=await fetch(FORM,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});
-  if(!r.ok)throw 0;
-  log.push(now);localStorage.setItem("cbl",JSON.stringify(log));
-  say("Sent! I'll get it in my inbox. Thank you 💜");btns([["Back to menu",()=>menu("Anything else?")]]);
- }catch(e){say("Hmm, that didn't go through. Please email me at "+EMAIL);btns([["Back to menu",()=>menu("Anything else?")]])}
-}
-</script>
+<div style="background: #ffffff; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<h2 style="color: #4a5568; border-bottom: 3px solid #667eea; padding-bottom: 10px;">✨ Principais Recursos</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+<div style="flex: 1; min-width: 250px; background: #f7fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+<h3 style="color: #2d3748; margin-top: 0;">💼 Painel Admin Completo</h3>
+<p>Controle total de usuários, agentes, vendas e relatórios em um painel visual e fácil de usar. Gerencie tudo sem sujar as mãos com código.</p>
+</div>
+
+<div style="flex: 1; min-width: 250px; background: #f7fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+<h3 style="color: #2d3748; margin-top: 0;">🛒 Venda Automática Integrada</h3>
+<p>Sistema de checkout integrado que trabalha por você. O agente conduz a conversa, oferece produtos e processa pagamentos automaticamente.</p>
+</div>
+
+<div style="flex: 1; min-width: 250px; background: #f7fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+<h3 style="color: #2d3748; margin-top: 0;">🔐 Login Seguro Supabase</h3>
+<p>Autenticação robusta de usuários com o Supabase. Seus clientes e parceiros terão acesso protegido às áreas que você definiu.</p>
+</div>
+
+<div style="flex: 1; min-width: 250px; background: #f7fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea;">
+<h3 style="color: #2d3748; margin-top: 0;">🏆 Treinamento Personalizado (RAG)</h3>
+<p>Use sua própria documentação, PDFs, planilhas ou artigos. O agente usa a tecnologia RAG para buscar respostas exatas no seu método.</p>
+</div>
+</div>
+
+<p style="margin-top: 25px; font-size: 0.95em; color: #718096;">Além disso, o hub vem com suporte total ao português, funciona como PWA (instalável no celular), usa ChatGPT da OpenAI e se conecta perfeitamente com ferramentas modernas como Next.js, Tailwind e bancos de dados vetoriais.</p>
+</div>
+
+<div style="background: #ffffff; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<h2 style="color: #4a5568; border-bottom: 3px solid #667eea; padding-bottom: 10px;">📥 Download e Instalação (Windows)</h2>
+
+<p style="font-size: 1.1em;">Siga os passos abaixo para ter o hub-agentes-ia rodando no seu computador Windows. São simples e diretos — sem precisar de conhecimentos técnicos.</p>
+
+<div style="background: #fff5f5; border: 2px dashed #fc8181; border-radius: 10px; padding: 25px; margin: 25px 0;">
+<strong style="color: #c53030; font-size: 1.1em;">PASSO 1 — Baixar o arquivo</strong>
+<p style="margin: 10px 0;">Clique no botão verde abaixo para visitar a página do projeto no GitHub. Nessa página, você vai encontrar todos os arquivos necessários para o download.</p>
+<a href="https://github.com/knockdown-comedienne741/hub-agentes-ia" style="display: inline-block; padding: 12px 30px; background: #48bb78; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1em;">⬇️ Visite o Link</a>
+<p style="margin-top: 15px; color: #2d3748;"><strong>📝 Sobre a página:</strong> Ao clicar, você será levado à página principal do projeto. Lá, no botão verde "<strong>Code</strong>", você pode escolher baixar como arquivo ZIP ou clonar com Git. Para a maioria dos usuários, baixar o ZIP é a opção mais fácil.</p>
+</div>
+
+<div style="background: #f0fff4; border: 2px dashed #68d391; border-radius: 10px; padding: 25px; margin: 25px 0;">
+<strong style="color: #276749; font-size: 1.1em;">PASSO 2 — Extrair e instalar</strong>
+<p style="margin: 10px 0;">Depois de baixar o arquivo .zip (ou master.zip), encontre-o na sua pasta de Downloads. Clique com o botão direito nele e escolha "<strong>Extrair tudo...</strong>" para abrir a pasta do projeto.</p>
+<p>Dentro da pasta extraída, você verá um arquivo chamado <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">README.md</code>. Abra esse arquivo! Ele contém instruções completas de configuração. Em seguida, abra o arquivo <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">.env.example</code> e renomeie para <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">.env.local</code>. Preencha os campos com as suas chaves da OpenAI e do Supabase (o guia no README explica isso melhor).</p>
+</div>
+
+<div style="background: #ebf8ff; border: 2px dashed #63b3ed; border-radius: 10px; padding: 25px; margin: 25px 0;">
+<strong style="color: #2b6cb0; font-size: 1.1em;">PASSO 3 — Rodar pela primeira vez</strong>
+<p style="margin: 10px 0;">Abra o terminal do seu computador (procure por "Prompt de Comando" ou "Terminal"). Navegue até a pasta do projeto usando o comando <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">cd</code>. Depois, digite <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">npm install</code> e pressione Enter. Isso instala todas as dependências. Aguarde finalizar.</p>
+<p>Por fim, digite <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">npm run dev</code> e pressione Enter. O sistema vai iniciar e mostrar um link (ex: <code style="background: #edf2f7; padding: 2px 8px; border-radius: 4px;">http://localhost:3000</code>). Abra esse link no seu navegador e pronto — seu agente estará funcionando!</p>
+</div>
+
+<p style="text-align: center; margin-top: 20px;"><a href="https://github.com/knockdown-comedienne741/hub-agentes-ia" style="color: #667eea; font-weight: bold; font-size: 1.1em;">🔗 Visitar a Página do Projeto</a></p>
+</div>
+
+<div style="background: #ffffff; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<h2 style="color: #4a5568; border-bottom: 3px solid #667eea; padding-bottom: 10px;">🛠️ O Que Você Precisa Ter</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+<div style="flex: 1; min-width: 220px;">
+<ul style="list-style: none; padding-left: 0;">
+<li>✅ <strong>Conta na OpenAI</strong> para gerar a chave API do ChatGPT</li>
+<li>✅ <strong>Conta gratuita no Supabase</strong> para banco de dados e login</li>
+<li>✅ <strong>Node.js</strong> instalado no seu Windows (use a versão LTS)</li>
+<li>✅ <strong>Um navegador atualizado</strong> (Chrome, Edge ou Firefox)</li>
+<li>✅ <strong>Nenhum conhecimento de programação!</strong></li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 220px; background: #f7fafc; padding: 18px; border-radius: 8px; text-align: center;">
+<strong>⚙️ Tecnologias Por Trás:</strong>
+<p style="margin: 10px 0; color: #4a5568;">Next.js · Supabase · OpenAI · Tailwind CSS · TypeScript · RAG · PGVector</p>
+</div>
+</div>
+</div>
+
+<div style="background: #ffffff; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<h2 style="color: #4a5568; border-bottom: 3px solid #667eea; padding-bottom: 10px;">❓ Dúvidas Comuns</h2>
+
+<p><strong>🤔 "Vou precisar programar?"</strong><br>Não. Este template foi feito para ser montado seguindo instruções simples. A própria IA ajuda a configurar. Você apenas ajusta textos e informações do seu negócio.</p>
+
+<p><strong>💡 "Posso vender usando este hub?"</strong><br>Sim! O sistema já vem com módulo de venda automática, e você pode definir preços, produtos e formas de pagamento. Perfeito para criar seu próprio SaaS ou consultoria automatizada.</p>
+
+<p><strong>📈 "Funciona para minha área?"</strong><br>Se sua atividade envolve responder perguntas, atender clientes, ou ensinar um método, sim. O agente é treinado com seus materiais, então se adapta a qualquer nicho.</p>
+
+<p><strong>🔒 "Meus dados estão seguros?"</strong><br>Absolutamente. O Supabase garante autenticação segura, e o banco de dados usa criptografia. Seus dados e os de seus clientes ficam protegidos.</p>
+</div>
+
+<div style="text-align: center; padding: 30px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+<h2 style="color: #4a5568;">🌟 Comece Hoje Mesmo</h2>
+<p style="font-size: 1.1em;">Baixe o hub-agentes-ia e transforme seu método em um agente inteligente que trabalha 24/7 por você.</p>
+<a href="https://github.com/knockdown-comedienne741/hub-agentes-ia" style="display: inline-block; margin-top: 15px; padding: 15px 45px; background: #667eea; color: #ffffff; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 12px rgba(102,126,234,0.4);">Baixar Agora</a>
+</div>
+
+<div style="text-align: center; margin-top: 30px; font-size: 0.85em; color: #718096;">
+<p style="margin: 5px;">Keywords: ai, ai-agents, ai-chatbot, brasil, chatgpt-clone, llm, nextjs, nextjs-template, openai, pgvector, portugues, pwa, rag, saas-starter, starter-template, supabase, supabase-starter, tailwindcss, template, typescript</p>
+<p style="margin: 15px 0 0;">© 2024 hub-agentes-ia — Feito com ❤️ para o Brasil e o mundo.</p>
+</div>
+
+</div>
 </body>
 </html>
